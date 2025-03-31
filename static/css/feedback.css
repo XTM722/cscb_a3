@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Feedback Header */
+.feedback-header {
+    background: rgba(169, 169, 169, 0.3); 
+    padding: 20px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #002D72; 
+}
+
+/* Feedback Container */
+.feedback-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 30px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Feedback Cards */
+.feedback-card {
+    background: rgba(240, 240, 240, 1);
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.feedback-card:hover {
+    transform: translateY(-5px);
+}
+
+/*  Titles */
+.feedback-card h3 {
+    background: #002D72; 
+    color: white;
+    padding: 12px;
+    border-radius: 5px;
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Feedback List */
+.feedback-card ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.feedback-card ul li {
+    margin-bottom: 6px;
+}
+
+/* Feedback Button */
+.feedback-button {
+    background: #002D72;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    border: 2px solid transparent;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+.feedback-button:hover {
+    background: white;
+    color: #002D72;
+    border: 2px solid #002D72;
+}
+
+/* Feedback Form */
+.feedback-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Feedback Textarea */
+.feedback-card textarea {
+    width: 100%;
+    height: 120px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 12px;
+    resize: none;
+    font-size: 14px;
+}
+
+/* Submit Button */
+.feedback-card button {
+    background: #002D72;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.feedback-card button:hover {
+    background: #0044aa;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .feedback-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

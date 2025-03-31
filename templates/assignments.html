@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSCB20 - Assignments</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/syllabus.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/assignments.css')}}"> 
+    <link rel="stylesheet" href="{{url_for('static', filename='css/theme.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="https://www.utsc.utoronto.ca/favicon.ico">
+</head>
+<body>
+    <!-- Sticky Header-->
+    <header class="sticky">
+        <!-- mobile menu-->
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">☰</label>
+
+        <div class="logo-container">
+            <h1 class="course-title">CSCB20</h1>
+        </div>
+
+        
+        <!-- Navigation Bar -->
+        <nav>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{url_for('syllabus')}}">Syllabus</a></li>
+                <li><a href="{{url_for('assignments')}}">Assignments</a></li>
+                <li><a href="{{url_for('labs')}}">Labs</a></li>
+                <li><a href="{{url_for('lecture_notes')}}">Lecture Notes</a></li>
+                <li><a href="https://piazza.com/class/m5fmz9kzjo83yk" target="_blank">Piazza</a></li>
+                <li><a href="https://markus2.utsc.utoronto.ca/" target="_blank">MarkUs</a></li>
+                <li><a href="{{url_for('feedback')}}">FeedBack</a></li>
+                <li><a href="{{url_for('course_team')}}">Course Team</a></li>
+            </ul>
+         </nav>
+
+         
+
+    </header>
+    
+
+    <!-- Assignments header-->
+    <section class="assignments-header">
+        <h2>CSCB20 - Assignments</h2>
+    </section>
+    
+    <!--Assignments breakdowns-->
+    <section class="assignments-breakdown">
+        <div class="breakdown-header">
+            <span class="column-title">Due Date</span>
+            <span class="column-title">Breakdown</span>
+        </div>
+        <div class="breakdown-item">
+            <span class="assignment-name">Assignment 1</span>
+            <span class="due-date">February 11 at 11:59pm</span>
+            <span class="breakdown-percentage">8%</span>
+        </div>
+        
+        <div class="breakdown-item">
+            <span class="assignment-name">Assignment 2</span>
+            <span class="due-date">March 12 at 11:59pm</span>
+            <span class="breakdown-percentage">10%</span>
+        </div>
+
+        <div class="breakdown-item">
+            <span class="assignment-name">Assignment 3</span>
+            <span class="due-date">
+                To Be Announced
+            </span>
+            <span class="breakdown-percentage">15%</span>
+        </div>
+
+    </section>
+    <!-- Assignments content-->
+     <section class="assignments-container">
+        <div class="assignments-grid">
+
+            <!--Assignment 1-->
+            <div class="assignment-card">
+                <h3>Assignment 1: SmartCity Initiative</h3>
+                <p class="dute-date"><strong>Due Date:</strong> February 11</p>
+                <p class="points"><strong>Points:</strong> 95</p>
+                <p class="context">In this assignment, you are a Data Analyst Intern for the SmartCity Initiative Team. The team is working on projects for Urban Connect 2.0, a next-generation smart city infrastructure system. Your supervisor has outlined some schemas and queries that need to be completed using relational algebra (RA) and SQL.</p>
+                <a href="#" class="pdf-download">Download PDF</a>
+            </div>
+
+            <div class="assignment-card">
+                <h3>Assignment 2: Building a Dynamic Course Website & Flask-Based Web Application</h3>
+                <p class="dute-date"><strong>Due Date:</strong> March 12</p>
+                <p class="points"><strong>Points:</strong> 105</p>
+                <p class="context">In this assignment, you will be building a dynamic course website and a Flask-based web application. The course website will be used to display course information, assignments, and other resources. The web application will be used to manage student grades and assignments.</p> 
+                <a href="#" class="pdf-download">Download PDF</a>
+            </div>
+
+            <div class="assignment-card unreleased">
+                <h3>Assignment 3: TBA</h3>
+                <p class="dute-date"><strong>Due Date:</strong> TBA</p>
+                <p class="context">To Be Released</p>
+            </div>
+        </div>
+     </section>
+
+    <!-- Footer -->
+    <footer>
+        
+        <ul class="menu"> 
+            <li><a href="https://acorn.utoronto.ca/" target="_blank">ACORN</a></li>
+            <li><a href="https://www.utoronto.ca/" target="_blank">U OF T MAIN</a></li>
+            <li><a href="https://q.utoronto.ca/" target="_blank">QUERCUS</a></li>
+            <li><a href="{{url_for('feedback')}}">WEBSITE FEEDBACK</a></li>
+        </ul>
+         
+        <ul class="social-links">
+            <li><a href="https://www.facebook.com/UofTCompSci/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li> 
+            <li><a href="https://instagram.com/uoftcompsci" target="_blank"><i class="fa-brands fa-instagram"></i></a></li> 
+            <li><a href="https://www.linkedin.com/school/uoftcompsci/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li> 
+            <li><a href="https://www.threads.net/@uoftcompsci" target="_blank"><i class="fa-brands fa-threads"></i></a></li> 
+            <li><a href="http://x.com/uoftcompsci" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li> 
+        </ul>
+        <p class="cs_department"><a href="https://web.cs.toronto.edu/">Faculty of Computer Science at UofT</a></p>
+        <p>Site Designed by <b>Kevin Hou</b> & <b>Judy Xu</b> & <b>Siming Wu</b></p>
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+        
+        
+    </footer>
+    <!--Dark Mode toggle-->
+    <div class="theme-toggle">
+        <input type="checkbox" id="dark-mode-toggle">
+        <label for="dark-mode-toggle" class="toggle-label">
+            <i class="fa-regular fa-moon"></i>
+            <i class="fa-regular fa-sun"></i>
+        </label>
+    </div>  
+</body>
+</html>

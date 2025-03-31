@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSCB20 - Introduction to Databases and Web Applications Winter 2025</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/theme.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="https://www.utsc.utoronto.ca/favicon.ico">
+</head>
+<body class="light-mode">
+    <!-- Sticky Header-->
+    <header class="sticky">
+        <!-- mobile menu-->
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">☰</label>
+
+        <div class="logo-container">
+            <h1 class="course-title">CSCB20</h1>
+        </div>
+
+        
+        <!-- Navigation Bar -->
+         <nav>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{url_for('syllabus')}}">Syllabus</a></li>
+                <li><a href="{{url_for('assignments')}}">Assignments</a></li>
+                <li><a href="{{url_for('labs')}}">Labs</a></li>
+                <li><a href="{{url_for('lecture_notes')}}">Lecture Notes</a></li>
+                <li><a href="https://piazza.com/class/m5fmz9kzjo83yk" target="_blank">Piazza</a></li>
+                <li><a href="https://markus2.utsc.utoronto.ca/" target="_blank">MarkUs</a></li>
+                <li><a href="{{url_for('feedback')}}">FeedBack</a></li>
+                <li><a href="{{url_for('course_team')}}">Course Team</a></li>
+            </ul>
+         </nav>
+
+         
+
+    </header>
+
+    <!--Hero Banner-->
+    <section class="hero">
+        <div class="hero-content">
+            <img src="https://cgcs.physics.utoronto.ca/media/images/UofT-white-on-transparent.max-400x150_RVQMtxm.png" alt="uoft logo" class="hero-logo">
+            <h1>CSCB20 - Introduction to Web & Databases</h1>
+            <p>Winter 2025</p>
+
+        </div>
+    </section>
+        
+    <!-- Main Content -->
+    <main>
+        <!--Welcome Part-->
+        <section class="welcome">
+            <h2>Welcome to <span style="color: #002D72;">CSCB20 Winter 2025!</span></h2>
+            <p>
+                This course provides a hands-on introduction to databases and web application development.
+                You Will gain both <b>theoretical knowledge</b> and <b>practical skills</b> to build a solid foundation in these areas.
+            </p>
+
+            <h3>What You'll Learn:</h3>
+            <ul class="learning-list">
+                <li><strong>Databases:</strong>
+                    <ul>
+                        <li>Key terminology and practical applications</li>
+                        <li>Creating, querying, and updating databases</li>
+                        <li>Designing databases using the entity-relationship model</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Web Development:</strong>
+                    <ul>
+                        <li>Building static and interactive web documents</li>
+                        <li>Setting up web servers and generating dynamic, server-side content</li>
+                        <li>Developing web applications integrated with databases</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <!--Course Resource Part-->
+        <section class="course-resources">
+            <h2>Course Resources</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <i class="fa-regular fa-map"></i>
+                    <h3>Syllabus</h3>
+                    <p>Course outline, timeline, everything you need to know.</p>
+                    <a href="{{url_for('syllabus')}}" class="btn">Learn More</a>
+                </div>
+
+                <div class="resource-card">
+                    <i class="fa-solid fa-code"></i>
+                    <h3>Assignments</h3>
+                    <p>Assignment materials are posted here.</p>
+                    <a href="{{url_for('assignments')}}" class="btn">View Assignments</a>
+                </div>
+
+                <div class="resource-card">
+                    <i class="fa-solid fa-flask"></i>
+                    <h3>Labs</h3>
+                    <p>Lab materials for weekly tutorials.</p>
+                    <a href="{{url_for('labs')}}" class="btn">Tutorial Material</a>
+                </div>
+
+                <div class="resource-card">
+                    <i class="fa-regular fa-comments"></i>
+                    <h3>Piazza</h3>
+                    <p>Discussion board for questions & answers.</p>
+                    <a href="https://piazza.com/class/m5fmz9kzjo83yk" class="btn" target="_blank">Join Piazza</a>
+
+                </div>
+
+                <div class="resource-card">
+                    <i class="fa-solid fa-chart-bar"></i>
+                    <h3>Markus</h3>
+                    <p>Submit your assignments here and view your grades.</p>
+                    <a href="https://markus2.utsc.utoronto.ca/" class="btn" target="_blank">Go to Markus</a>
+                </div>
+                
+                <div class="resource-card">
+                    <i class="fa-solid fa-users"></i>
+                    <h3>Course Team</h3>
+                    <p>Meet the instructors and TAs for this course.</p>
+                    <a href="{{url_for('course_team')}}" class="btn">Meet the Team</a>
+                </div>
+
+            </div> 
+
+        </section>
+
+        <!--Announcements & News Part-->
+        <section class="news-announcements">
+            <h2>News & Announcements</h2>
+            <div class="news-container">
+                <div class="news-card">
+                    <h3>Assignment 1 Released</h3>
+                    <span class="date">January 21, 2025</span>
+                    <p>Assignment 1 is now available. Check on Quercus.</p>
+                </div>
+                <div class="news-card">
+                    <h3>Midterm Date Announced</h3>
+                    <span class="date">February 10, 2025</span>
+                    <p>The midterm will be held in person on February 28. Check Piazza for location details.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!--Calendar-->
+        <section class="calendar-section">
+            <h2>Course Calendar</h2>
+            <div class="calendar-container">
+                <iframe src="https://calendar.google.com/calendar/embed?src=your_calendar_id&ctz=America/Toronto"
+                style="border: 0;"
+                width="100%"
+                height="500"
+                frameborder="0"
+                scrolling="no"></iframe>
+            </div>
+        </section>
+
+        <!--Instructor Info-->
+        <section class="instructor-contact">
+            <h2>Contact Information</h2>
+            <p>Prof. Purva is the course coordinator, which means that she deals with all administrative matters: missed work, problems with your grades, and TA issues.</p>
+            <p>Email: <a href="mailto:purva.gawde@utoronto.ca">purva.gawde@utoronto.ca</a></p>
+            <div class="instructor-info">
+                <div class="instructor-image">
+                    <img src="{{url_for('static', filename='images/purva-gawde.png')}}" alt="Prof. Purva Gawde">
+                </div>
+                <div class="instructo-details">
+                    <h3>Your Instructor</h3>
+                    <p><strong>Purva Gawde</strong></p>
+                    <p><Strong>Office Location:</Strong> IA 4056</p>
+                    <p><Strong>Office Hours:</Strong> Monday 11:00 AM - 12:00 PM</p>
+                </div>
+            </div>
+        </section>
+
+        <!--Academic Integrity-->
+        <section class="academic-integrity">
+            <h2>Academic Integrity</h2>
+            <p>All of the work you submit must be done by you, and your work must not be submitted by someone else. 
+                Plagiarism is academic fraud and is taken very seriously. The department uses software that compares programs for evidence of similar code. 
+                Please read the Rules and Regulations from the U of T Governing Council, especially the <a href="https://governingcouncil.utoronto.ca/secretariat/policies/code-behaviour-academic-matters-july-1-2019" target="_blank">Code of Behaviour on Academic Matters.</a></p>
+            
+            <p>Please also see the information for students from the <a href="https://www.utsc.utoronto.ca/aacc/academic-integrity" target="_blank">Office of Student Academic Integrity.</a></p>
+
+            <div class="plagiarism-rules">
+                <h3>The simplest advice for avoiding plagiarism is:</h3>
+                <ul>
+                    <li>Never look at another student's assignment solution, whether it is on paper or on the computer screen. Never show another student your assignment solution. This applies to all drafts of a solution and to incomplete solutions.</li>
+                    <li>Never use ChatGPT or a similar tool to generate a part of your solution.</li>
+                    <li>If you find material on the web that solves part or all of an assignment, do not use or submit any part of it. A large percentage of the academic offences in CMS involve students who have never met, and who just happened to find the same solution online. If you find a solution, someone else will too.</li>
+
+                </ul>
+            </div>
+            <div class="tutoring-warning">
+                <h3>Be careful with Tutoring Services</h3>
+                <p>
+                    In previous years, some students were suspended due to work done with unapproved tutors.
+            If in doubt, ask your instructor whether tutoring services are legitimate.
+                </p>
+            </div>
+        </section>
+        
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        
+        <ul class="menu"> 
+            <li><a href="https://acorn.utoronto.ca/" target="_blank">ACORN</a></li>
+            <li><a href="https://www.utoronto.ca/" target="_blank">U OF T MAIN</a></li>
+            <li><a href="https://q.utoronto.ca/" target="_blank">QUERCUS</a></li>
+            <li><a href="{{url_for('feedback')}}">WEBSITE FEEDBACK</a></li>
+        </ul>
+         
+        <ul class="social-links">
+            <li><a href="https://www.facebook.com/UofTCompSci/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li> 
+            <li><a href="https://instagram.com/uoftcompsci" target="_blank"><i class="fa-brands fa-instagram"></i></a></li> 
+            <li><a href="https://www.linkedin.com/school/uoftcompsci/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li> 
+            <li><a href="https://www.threads.net/@uoftcompsci" target="_blank"><i class="fa-brands fa-threads"></i></a></li> 
+            <li><a href="http://x.com/uoftcompsci" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li> 
+        </ul>
+        <p class="cs_department"><a href="https://web.cs.toronto.edu/">Faculty of Computer Science at UofT</a></p>
+        <p>Site Designed by <b>Kevin Hou</b> & <b>Judy Xu</b> & <b>Siming Wu</b></p>
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+        
+        
+    </footer>
+
+    <!--Dark Mode toggle-->
+    <div class="theme-toggle">
+        <input type="checkbox" id="dark-mode-toggle">
+        <label for="dark-mode-toggle" class="toggle-label">
+            <i class="fa-regular fa-moon"></i>
+            <i class="fa-regular fa-sun"></i>
+        </label>
+    </div>  
+</body>
+</html>

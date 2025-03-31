@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSCB20 - Course Team</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}"> 
+    <link rel="stylesheet" href="{{url_for('static', filename='css/syyllabus.css')}}"> 
+    <link rel="stylesheet" href="{{url_for('static', filename='css/assignments.css')}}"> 
+    <link rel="stylesheet" href="{{url_for('static', filename='css/labs.css')}}"> 
+    <link rel="stylesheet" href="{{url_for('static', filename='css/lecture_notes.css')}}"> 
+    <link rel="stylesheet" href="{{url_for('static', filename='css/feedback.css')}}"> 
+    <link rel="stylesheet" href="{{url_for('static', filename='css/course_team.css')}}"> 
+    <link rel="stylesheet" href="{{url_for('static', filename='css/theme.css')}}"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="https://www.utsc.utoronto.ca/favicon.ico">
+</head>
+<body>
+    <!-- Sticky Header-->
+    <header class="sticky">
+        <!-- mobile menu-->
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">☰</label>
+
+        <div class="logo-container">
+            <h1 class="course-title">CSCB20</h1>
+        </div>
+
+        
+        <!-- Navigation Bar -->
+        <nav>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{url_for('syllabus')}}">Syllabus</a></li>
+                <li><a href="{{url_for('assignments')}}">Assignments</a></li>
+                <li><a href="{{url_for('labs')}}">Labs</a></li>
+                <li><a href="{{url_for('lecture_notes')}}">Lecture Notes</a></li>
+                <li><a href="https://piazza.com/class/m5fmz9kzjo83yk" target="_blank">Piazza</a></li>
+                <li><a href="https://markus2.utsc.utoronto.ca/" target="_blank">MarkUs</a></li>
+                <li><a href="{{url_for('feedback')}}">FeedBack</a></li>
+                <li><a href="{{url_for('course_team')}}">Course Team</a></li>
+            </ul>
+         </nav>
+
+         
+
+    </header>
+
+
+    <!-- Course Team Header -->
+    <section class="course-team-header">
+        <h2>Course Team</h2>
+    </section>
+
+
+    <!-- Course Team Container -->
+
+    <section class="course-team-container">
+        <!-- Instructor -->
+        <div class="team-card instructor">
+            <img src="{{url_for('static', filename='images/purva-gawde.png')}}" alt="Instructor Photo">
+            <div class="team-info">
+                <h3>Prof. Purva Gawde</h3>
+                <p>Instructor</p>
+                <p><strong>Email:</strong> <a href="mailto:purva.gawde@utoronto.ca">purva.gawde@utoronto.ca</a></p>
+                <p><strong>Office:</strong> IA 4056</p>
+                <p><strong>Office Hours:</strong> Monday 11:00 - 12:00</p>
+            </div>
+        </div>
+
+        <!-- TA 1 -->
+        <div class="team-card ta">
+            <img src="{{url_for('static', filename='images/ta.jpg')}}" alt="TA Photo">
+            <div class="team-info">
+                <h3>Naghmeh Safaie</h3>
+                <p>Teaching Assistant</p>
+                <p><strong>Email:</strong> <a href="mailto:naghmeh.safaie@mail.utoronto.ca">naghmeh.safaie@mail.utoronto.ca</a></p>
+                <p><strong>Office:</strong> TBA</p>
+                <p><strong>Office Hours:</strong> TBA</p>
+            </div>
+        </div>
+
+        <!-- TA 2 -->
+        <div class="team-card ta">
+            <img src="{{url_for('static', filename='images/ta.jpg')}}" alt="TA Photo">
+            <div class="team-info">
+                <h3>Orhan Cangurel</h3>
+                <p>Teaching Assistant</p>
+                <p><strong>Email:</strong> <a href="mailto:orhan.cangurel@mail.utoronto.ca">orhan.cangurel@mail.utoronto.ca</a></p>
+                <p><strong>Office:</strong> TBA</p>
+                <p><strong>Office Hours:</strong> TBA</p>
+            </div>
+        </div>
+
+        <!-- TA 3 -->
+        <div class="team-card ta">
+            <img src="{{url_for('static', filename='images/ta.jpg')}}" alt="TA Photo">
+            <div class="team-info">
+                <h3>Vincent Zhang</h3>
+                <p>Teaching Assistant</p>
+                <p><strong>Email:</strong> <a href="mailto:vincentz.zhang@mail.utoronto.ca">vincentz.zhang@mail.utoronto.ca</a></p>
+                <p><strong>Office:</strong> TBA</p>
+                <p><strong>Office Hours:</strong> TBA</p>
+            </div>
+        </div>
+
+        <!-- TA 4 -->
+        <div class="team-card ta">
+            <img src="{{url_for('static', filename='images/ta.jpg')}}" alt="TA Photo">
+            <div class="team-info">
+                <h3>Kevin Zhang</h3>
+                <p>Teaching Assistant</p>
+                <p><strong>Email:</strong> <a href="#">unknown@mail.utoronto.ca</a></p>
+                <p><strong>Office:</strong> TBA</p>
+                <p><strong>Office Hours:</strong> TBA</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Footer -->
+    <footer>
+        
+        <ul class="menu"> 
+            <li><a href="https://acorn.utoronto.ca/" target="_blank">ACORN</a></li>
+            <li><a href="https://www.utoronto.ca/" target="_blank">U OF T MAIN</a></li>
+            <li><a href="https://q.utoronto.ca/" target="_blank">QUERCUS</a></li>
+            <li><a href="{{url_for('feedback')}}">WEBSITE FEEDBACK</a></li>
+        </ul>
+         
+        <ul class="social-links">
+            <li><a href="https://www.facebook.com/UofTCompSci/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li> 
+            <li><a href="https://instagram.com/uoftcompsci" target="_blank"><i class="fa-brands fa-instagram"></i></a></li> 
+            <li><a href="https://www.linkedin.com/school/uoftcompsci/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li> 
+            <li><a href="https://www.threads.net/@uoftcompsci" target="_blank"><i class="fa-brands fa-threads"></i></a></li> 
+            <li><a href="http://x.com/uoftcompsci" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li> 
+        </ul>
+        <p class="cs_department"><a href="https://web.cs.toronto.edu/">Faculty of Computer Science at UofT</a></p>
+        <p>Site Designed by <b>Kevin Hou</b> & <b>Judy Xu</b> & <b>Siming Wu</b></p>
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+        
+        
+    </footer>
+    <!--Dark Mode toggle-->
+    <div class="theme-toggle">
+        <input type="checkbox" id="dark-mode-toggle">
+        <label for="dark-mode-toggle" class="toggle-label">
+            <i class="fa-regular fa-moon"></i>
+            <i class="fa-regular fa-sun"></i>
+        </label>
+    </div>  
+    
+</body>
+</html>

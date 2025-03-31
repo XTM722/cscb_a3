@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSCB20 - Syllabus</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}"> 
+    <link rel="stylesheet" href="{{url_for('static', filename='css/syllabus.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/theme.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="https://www.utsc.utoronto.ca/favicon.ico">
+</head>
+<body>
+    <!-- Sticky Header-->
+    <header class="sticky">
+        <!-- mobile menu-->
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">☰</label>
+
+        <div class="logo-container">
+            <h1 class="course-title">CSCB20</h1>
+        </div>
+
+        
+        <!-- Navigation Bar -->
+        <nav>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{url_for('syllabus')}}">Syllabus</a></li>
+                <li><a href="{{url_for('assignments')}}">Assignments</a></li>
+                <li><a href="{{url_for('labs')}}">Labs</a></li>
+                <li><a href="{{url_for('lecture_notes')}}">Lecture Notes</a></li>
+                <li><a href="https://piazza.com/class/m5fmz9kzjo83yk" target="_blank">Piazza</a></li>
+                <li><a href="https://markus2.utsc.utoronto.ca/" target="_blank">MarkUs</a></li>
+                <li><a href="{{url_for('feedback')}}">FeedBack</a></li>
+                <li><a href="{{url_for('course_team')}}">Course Team</a></li>
+            </ul>
+         </nav>
+
+         
+
+    </header>
+
+    <!-- Syllabus header-->
+     <section class="syllabus-header">
+        <h2>Course Syllabus</h2>
+        <a href="{{url_for('static', filename='pdf/syllabus.pdf')}}" download class="download-btn">Download</a>
+     </section>
+
+    <!--Syllabus content-->
+    <section class="syllabus-container">
+        <div class="syllabus-grid">
+            <div class="syllabus-item" data-content="desc">
+                <p>Course Description</p>
+                <div class="syllabus-info">
+                    <p>This course provides a hands-on introduction to databases and web application development. You will gain both theoretical knowledge and practical skills to build a solid foundation in these areas.</p>
+                </div>
+            </div>
+
+            <div class="syllabus-item">
+                <p>Course Administration</p>
+                <div class="syllabus-info">
+                    <p>Instructor: Prof. Purva Gwade, Lectures in-person will not be recorded.</p>
+                </div>
+            </div>
+            <div class="syllabus-item">
+                <p>Required Background</p>
+                <div class="syllabus-info">
+                    <p>Some experience with programming in an imperative language such as Python, Java, or C. You may not take this course after - or concurrently with - any C- or D-level CSC course.</p>
+                </div>
+            </div>
+
+            <div class="syllabus-item">
+                <p>Motivation</p>
+                <div class="syllabus-info">
+                    <p>Databases are incredibly ubiquitous and underlie technology used by most people every day.
+                        Databases reside behind a huge fraction of websites. Most of the amenities we enjoy on the Web
+                        are provided by web database applications. Web-based email, forums and bulletin boards, online
+                        shopping, corporate web sites, and sports and news portals are all database-driven. To build a
+                        modern web site, you need to develop a database application. In this course, you will learn how
+                        to bring together Web and databases to build applications.</p>
+                </div>
+            </div>
+
+            <div class="syllabus-item">
+                <p>Course Learning Outcomes</p>
+                <div class="syllabus-info">
+                    <p>Upon completion of this course, and of course with hard work and practice, you will:</p>
+                    <ol>
+                        <li>Learn the basic concepts and appreciate the applications of database systems.</li>
+                        <li>Be familiar with the relational database theory and be able to write relational algebra.</li>
+                        <li>Master the basics of SQL and construct queries using SQL.</li>
+                        <li>Comprehend the fundamentals of web application development by building database backend app from scratch, using HTML, JavaScript, micro web frameworks like Python Flask, and other open-source tools.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="syllabus-item">
+                <p>Textbook & Lecture Notes</p>
+                <div class="syllabus-info">
+                    <ul>
+                        <li>There is no required textbook, however, mandatory readings will be assigned using various web pages from the internet.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="syllabus-item">
+                <p>Labs/Tutorials</p>
+                <div class="syllabus-info">
+                    <p>There are weekly tutorials conducted in person.</p>
+                </div>
+            </div>
+
+            <div class="syllabus-item">
+                <p>Course Work and Grading</p>
+                <div class="syllabus-info">
+                    <p>There will be 3 assignments, 1 midterm, and 1 final exam. The final grade will be calculated as follows:</p>
+                    <ul>
+                        <li>Assignments: 33%</li>
+                        <li>Midterm: 25%</li>
+                        <li>Final Exam: 40%</li>
+                        <li>Tutorial attentance: 2%</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="syllabus-item">
+                <p>Course Policies</p>
+                <div class="syllabus-info">
+                    <p>Too long, i dont want copy paste. Please download the syllabus :)</p>
+                </div>
+            </div>
+
+        </div>
+        
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        
+        <ul class="menu"> 
+            <li><a href="https://acorn.utoronto.ca/" target="_blank">ACORN</a></li>
+            <li><a href="https://www.utoronto.ca/" target="_blank">U OF T MAIN</a></li>
+            <li><a href="https://q.utoronto.ca/" target="_blank">QUERCUS</a></li>
+            <li><a href="{{url_for('feedback')}}">WEBSITE FEEDBACK</a></li>
+        </ul>
+         
+        <ul class="social-links">
+            <li><a href="https://www.facebook.com/UofTCompSci/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li> 
+            <li><a href="https://instagram.com/uoftcompsci" target="_blank"><i class="fa-brands fa-instagram"></i></a></li> 
+            <li><a href="https://www.linkedin.com/school/uoftcompsci/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li> 
+            <li><a href="https://www.threads.net/@uoftcompsci" target="_blank"><i class="fa-brands fa-threads"></i></a></li> 
+            <li><a href="http://x.com/uoftcompsci" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li> 
+        </ul>
+        <p class="cs_department"><a href="https://web.cs.toronto.edu/">Faculty of Computer Science at UofT</a></p>
+        <p>Site Designed by <b>Kevin Hou</b> & <b>Judy Xu</b> & <b>Siming Wu</b></p>
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+        
+        
+    </footer>
+    <!--Dark Mode toggle-->
+    <div class="theme-toggle">
+        <input type="checkbox" id="dark-mode-toggle">
+        <label for="dark-mode-toggle" class="toggle-label">
+            <i class="fa-regular fa-moon"></i>
+            <i class="fa-regular fa-sun"></i>
+        </label>
+    </div>  
+    
+</body>
+</html>

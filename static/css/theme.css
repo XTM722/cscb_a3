@@ -1,0 +1,179 @@
+/* Default Light Mode */
+body {
+    --background-color: #ffffff; 
+    --text-color: #000000;
+    --card-background: #f8f9fa;
+    --button-background: #002D72;
+    --button-text: white; 
+    --header-background: #002D72; 
+    --hero-background: #002D72; 
+    --section-background: #f8f9fa; 
+
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Sticky Header */
+.sticky {
+    background-color: var(--header-background);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--hero-background);
+    color: white; 
+}
+
+/* Sections */
+.welcome,
+.course-resources,
+.news-announcements,
+.calendar-section,
+.instructor-contact,
+.academic-integrity {
+    background-color: var(--section-background);
+    color: var(--text-color);
+}
+
+
+.welcome p,
+.course-resources p,
+.news-announcements p,
+.instructor-contact p,
+.academic-integrity p {
+    color: var(--text-color);
+}
+
+/* Cards (Resource Cards, News Cards) */
+.resource-card,
+.news-card {
+    background: var(--card-background);
+    color: var(--text-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Bar */
+.nav-links a {
+    color: white !important; 
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 5px;
+}
+
+/* Buttons */
+.btn {
+    background-color: var(--button-background);
+    color: var(--button-text);
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    background-color: var(--header-background);
+}
+
+/* ====== DARK MODE */
+body:has(#dark-mode-toggle:checked) {
+    --background-color: #2a2a2a; 
+    --text-color: #ffffff; 
+    --card-background: #3a3a3a;
+    --button-background: #444; 
+    --button-text: #ffffff;
+    --header-background: #333; 
+    --hero-background: #444; 
+    --section-background: #2e2e2e; 
+}
+
+/* navigation text in dark mode */
+body:has(#dark-mode-toggle:checked) .sticky,
+body:has(#dark-mode-toggle:checked) .nav-links a {
+    color: white !important;
+}
+
+/* section text in dark mode */
+body:has(#dark-mode-toggle:checked) .welcome p,
+body:has(#dark-mode-toggle:checked) .course-resources p,
+body:has(#dark-mode-toggle:checked) .news-announcements p,
+body:has(#dark-mode-toggle:checked) .calendar-section p,
+body:has(#dark-mode-toggle:checked) .instructor-contact p,
+body:has(#dark-mode-toggle:checked) .academic-integrity p {
+    color: white;
+}
+
+/* announcements and email  */
+body:has(#dark-mode-toggle:checked) .news-card span,
+body:has(#dark-mode-toggle:checked) .instructor-contact a,
+body:has(#dark-mode-toggle:checked) .academic-integrity a {
+    color: white;
+}
+
+/* titles blue */
+h2, h3, strong {
+    color: #002D72;
+}
+
+/* Dark Mode Toggle */
+.theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* Hide Checkbox */
+#dark-mode-toggle {
+    display: none;
+}
+
+/* Toggle Button */
+.toggle-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative;
+}
+
+/* Icons */
+.toggle-label i {
+    font-size: 22px;
+    position: absolute;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.fa-moon {
+    color: #002D72;
+    opacity: 1;
+}
+
+.fa-sun {
+    color: #ffdd57;
+    opacity: 0;
+}
+
+/* Toggle Switch Effects */
+body:has(#dark-mode-toggle:checked) .toggle-label {
+    background: #333;
+    transform: rotate(180deg);
+}
+
+body:has(#dark-mode-toggle:checked) .fa-moon {
+    opacity: 0;
+}
+
+body:has(#dark-mode-toggle:checked) .fa-sun {
+    opacity: 1;
+}

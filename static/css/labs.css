@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Tutorials Header */
+.labs-header {
+    background: rgba(169, 169, 169, 0.3);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1100px;
+}
+
+.labs-header h2 {
+    color: #002D72;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Tutorials Container */
+.tutorials-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1100px;
+}
+
+/* Tutorials List */
+.tutorials-list {
+    width: 100%;
+}
+
+/* Tutorial Row */
+.tutorial-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f0f0f0;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Tutorial Title */
+.tutorial-title {
+    flex: 2;
+    color: #002D72;
+}
+
+
+.worksheet-btn, .solution-btn {
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    color: white;
+    margin-left: 10px;
+}
+
+.worksheet-btn {
+    background: #0044aa;
+}
+
+.worksheet-btn:hover {
+    background: #002D72;
+    transform: translateY(-2px);
+}
+
+.solution-btn {
+    background: #008000;
+}
+
+.solution-btn:hover {
+    background: #006600;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .tutorial-row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .worksheet-btn, .solution-btn {
+        margin: 5px 0;
+    }
+}
