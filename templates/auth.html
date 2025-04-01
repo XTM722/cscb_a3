@@ -76,5 +76,10 @@
   </div>
 
   <script src={{url_for('static', filename='js/auth.js')}}></script>
+  {% if show_register%}
+  <script>
+    toggleForm(); //shows to the register form
+  </script>
+  {% endif %}
 </body>
 </html>

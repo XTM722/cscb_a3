@@ -10,6 +10,8 @@
     <link rel="icon" type="image/svg+xml" href="https://www.utsc.utoronto.ca/favicon.ico">
 </head>
 <body class="light-mode">
+
+    
     <!-- Sticky Header-->
     <header class="sticky">
         <!-- mobile menu-->
@@ -19,6 +21,7 @@
         <div class="logo-container">
             <h1 class="course-title">CSCB20</h1>
         </div>
+
 
         
         <!-- Navigation Bar -->
@@ -49,6 +52,11 @@
 
         </div>
     </section>
+    {% if session.get('login_msg')%}
+    <div class="persistent-message">
+        {{session.get('login_msg')}}
+    </div>
+    {%endif%}
         
     <!-- Main Content -->
     <main>

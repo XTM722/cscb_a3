@@ -208,3 +208,12 @@ form button:hover {
   background-color: #f8d7da;
   color: #721c24;
 }
+
+.alert-warning {
+  background-color: #fff3cd;
+  color: #856404;
+}
+.alert-info {
+  background-color: #cce5ff;
+  color: #002D72;
+}

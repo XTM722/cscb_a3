@@ -12,7 +12,7 @@
     position: fixed;
     top: 0;
     z-index: 1000;
-    background-color: #002D72; /* Navy Blue */
+    background-color: #002D72; 
     color: white;
     padding: 15px 20px;
     width: 100%;
@@ -115,7 +115,7 @@ nav {
         display: none;
         flex-direction: column;
         align-items: center;
-        background-color: #1100ff; 
+        background-color: #002D72; 
         width: 100%;
         padding: 10px;
         position: absolute;
@@ -615,4 +615,23 @@ footer {
     text-align: center;
     position: relative;
     margin-top: auto; 
+
 }
+
+
+/* Persistent message*/
+  
+.persistent-message {
+    text-align: center;
+    background-color:#e6f2ff;
+    color: #002D72;
+    padding: 15px 20px;
+    margin: 30px auto 20px;
+    max-width: 800px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    border: 1px solid #cce0f5;
+}
+  
