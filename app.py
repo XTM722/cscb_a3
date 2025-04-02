@@ -3,7 +3,7 @@
 @author: Kevin A. Hou Zhong, Xu Yue, Siming Wu
 @date: 2025-03-30
 """
-from flask import Flask, render_template, request, redirect, session, flash, url_for
+from flask import Flask, jsonify, render_template, request, redirect, session, flash, url_for
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 
@@ -26,14 +26,14 @@ class User(db.Model):
     username = db.Column(db.String(150), unique=True, nullable=False) # Username
     password = db.Column(db.String(200), nullable=False) # Password
     role = db.Column(db.String(20), nullable=False)  # student or instructor
-    
-# route: homepage (index.html) only accessible when logged in
-@app.route('/')
-def index():
-    if 'user_id' not in session:
-        return redirect('/login')
-    return render_template('index.html', name=session.get('user_username'))
+    grades = db.relationship('Grade', backref='student', lazy= True) 
 
+class Grade(db.Model):
+    id = db.Column(db.Integer, primary_key = True) # Grade ID primary key
+    student_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False) # Foreign key to User
+    category = db.Column(db.String(50), nullable=False) # Category of the grade
+    mark = db.Column(db.Float, nullable = True)
+    
 
 
 motivational_messages = [
@@ -49,12 +49,36 @@ motivational_messages = [
 ]
 
 
+# route: homepage (index.html) only accessible when logged in
+@app.route('/')
+def index():
+    if 'user_id' not in session:
+        return redirect('/login')
+    if session.get('user_role') == 'instructor':
+        return redirect('/instructor')
+    return render_template('index.html')
+
+# route: instructor page (instructor.html) only accessible when logged in as instructor
+@app.route('/instructor')
+def instructor_dashboard():
+    if 'user_id' not in session:
+        return redirect('/login')
+    if session.get('user_role') != 'instructor':
+        return redirect('/instructor')
+    
+    # get instructor username from session
+    user = User.query.get(session['user_id'])
+    first_name = user.full_name.split()[0]  # Get first name
+    return render_template('instructor_dashboard.html', name=first_name)
 
 # route login page (auth.html) - GET: show login form, POST: process login
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'GET' and 'user_id' in session:
+        if session.get('user_role') == 'instructor':
+            return redirect('/instructor')
         return redirect('/')
+    
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
@@ -68,7 +92,7 @@ def login():
             index = sum(ord(c) for c in user.username) % len(motivational_messages)  # Hash username to get index
             motivation = motivational_messages[index]  # Get motivational message
             session['login_msg'] = f"Welcome {first_name}! {motivation}" # store welcome message in session
-            return redirect('/')
+            return redirect('/instructor' if user.role == 'instructor' else '/') 
         else:
             flash("Incorrect username or password.", 'danger')
             return redirect('/login')
@@ -165,6 +189,56 @@ def add_header(response):
     response.headers['Expires'] = '-1'
     return response
 
+@app.route('/manage_marks', methods=['GET', 'POST'])
+def manage_marks():
+    if 'user_id' not in session or session.get('user_role') != 'instructor':
+        return redirect('/login')
+
+    students = User.query.filter_by(role='student').all()
+    selected_student = None
+    grades = []
+
+    if request.method == 'POST':
+        student_id = request.form.get('student_id')
+        category = request.form.get('category')
+        mark = request.form.get('mark')
+
+        if student_id and not category and not mark:
+            # Just selected a student (via AJAX)
+            selected_student = User.query.get(student_id)
+            grades = Grade.query.filter_by(student_id=student_id).all()
+            html = render_template('grades_fragment.html', selected_student=selected_student, grades=grades)
+            return jsonify({'html': html})
+        
+        elif student_id and category and mark:
+            selected_student = User.query.get(student_id)
+            existing_grade = Grade.query.filter_by(student_id=student_id, category=category).first()
+            if existing_grade:
+                existing_grade.mark = mark
+            else:
+                db.session.add(Grade(student_id=student_id, category=category, mark=mark))
+            db.session.commit()
+            flash(f"Grade for {category} updated!", "success")
+            grades = Grade.query.filter_by(student_id=student_id).all()
+            html = render_template('grades_fragment.html', selected_student=selected_student, grades=grades)
+            return jsonify({'html': html, 'message': 'Marks updated successfully!'})
+
+    # Default GET
+    return render_template(
+        'manage_marks.html',
+        students=students,
+        selected_student=selected_student,
+        grades=grades
+    )
+        
+
+@app.route('/remark_request')
+def remark_requests():
+    return "Remark request page comming soon!"
+
+@app.route('/instructor_feedback')
+def instructor_feedback():
+    return "Instructor feedback page comming soon!"
 
 if __name__ == '__main__':
     with app.app_context():

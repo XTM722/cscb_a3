@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSCB20 - Instructor Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="https://www.utsc.utoronto.ca/favicon.ico">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/dashboard.css')}}">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <h2>Welcome Instructor {{ name }}</h2>
+
+        <div class="dashboard-grid">
+            <a href ="{{url_for('manage_marks')}}" class="dashboard-card">
+                <h3> 📝 Manage Marks </h3>
+                <p>View and enter student grades</p>
+            </a>
+            <a href = "{{url_for('remark_requests')}}" class="dashboard-card">
+                <h3> 📬 Remark Requests </h3>
+                <p> See pending regrade requests</p>
+            </a>
+
+            <a href = "{{url_for('instructor_feedback')}}" class="dashboard-card">
+                <h3> 💬 Feedback </h3>
+                <p>View student feedback</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- Logout button-->
+     <div class="logout-bottom">
+        <a href="{{url_for('logout')}}" class="logout-button">Logout</a>
+    </div>
+</body>
+
+
+
+
+
+
+
+</html>

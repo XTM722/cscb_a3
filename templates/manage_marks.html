@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSCB20 - Manage Marks</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/manage_marks.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="https://www.utsc.utoronto.ca/favicon.ico">
+    <script defer src="{{ url_for('static', filename='js/manage_marks.js') }}"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Manage Marks</h2>
+
+        <div id="flash-message" class="flash-success" style="display: none;"></div>
+
+        <div class="student-list">
+            <h3>Select a student</h3>
+            <form id="student-form">
+                <select name="student_id" id="student-select" required>
+                    <option value="">-- Select Student --</option>
+                    {% for student in students %}
+                        <option value="{{ student.id }}">
+                            {{ student.full_name }} ({{ student.username }})
+                        </option>
+                    {% endfor %}
+                </select>
+            </form>
+        </div>
+
+        <!-- Grade form and  table will load dynamically here -->
+        <div id="grade-section">
+            {% if selected_student %}
+                {% include 'grades_fragment.html' %}
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
